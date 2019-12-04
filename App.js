@@ -5,16 +5,15 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import AccountScreen from './src/screens/AccountScreen';
 import SigninScreen from './src/screens/SigninScreen';
-import SignupScreen from './src/screens/AccountScreen';
+import SignupScreen from './src/screens/SignupScreen';
 import TrackCreateScreen from './src/screens/TrackCreateScreen';
 import TrackDetailScreen from './src/screens/TrackDetailScreen';
 import TrackListScreen from './src/screens/TrackListScreen';
 
-
 const switchNavigator = createSwitchNavigator({
   loginFlow: createStackNavigator({
-    Signin: SigninScreen,
-    Signup: SignupScreen
+    Signup: SignupScreen,
+    Signin: SigninScreen
   }),
   mainFlow: createBottomTabNavigator({
     trackListFlow: createStackNavigator({
@@ -27,5 +26,3 @@ const switchNavigator = createSwitchNavigator({
 });
 
 export default createAppContainer(switchNavigator);
-
-

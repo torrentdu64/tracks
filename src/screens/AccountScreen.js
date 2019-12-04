@@ -7,13 +7,13 @@ import {View
 } from 'react-native';
 
 const AccountScreen = (props) => {
-  render() {
+
     return (
       <View >
-        Text>account  </Text>
+        <Text>account  </Text>
       </View>
     );
-  }
+
 }
 
 const styles = StyleSheet.create({

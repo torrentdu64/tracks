@@ -3,18 +3,19 @@ import React from 'react';
 
 import {View
   ,StyleSheet,
-  Text
+  Text, Button
 } from 'react-native';
 
-const TackListScreen = (props) => {
-  render() {
-    return (
-      <View >
-        Text>track list </Text>
-      </View>
-    );
-  }
-}
+const TackListScreen = ({navigation}) => {
+
+    return (< >
+
+        <Text>track list </Text>
+        <Button title="got to Track detail" onPress={()=> navigation.navigate('TrackDetail')} />
+      </>);
+
+
+};
 
 const styles = StyleSheet.create({
 

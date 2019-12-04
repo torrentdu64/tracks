@@ -7,13 +7,13 @@ import {View
 } from 'react-native';
 
 const TrackCreateScreen = (props) => {
-  render() {
+
     return (
       <View >
-        Text>track create </Text>
+        <Text>track create </Text>
       </View>
     );
-  }
+
 }
 
 const styles = StyleSheet.create({
