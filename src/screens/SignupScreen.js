@@ -1,25 +1,57 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import {View
-  ,StyleSheet,
-  Text, Button
+  ,StyleSheet
 } from 'react-native';
+
+import { Text, Input, Button} from 'react-native-elements';
+import Spacer from '../components/Spacer';
 
 const SignupScreen = ({navigation}) => {
 
+    const [ email, setEmail ] = useState('');
+    const [ password , setPassword ] = useState('');
+
     return (
-      <>
-        <Text>Sign up </Text>
-        <Button title="go to sign in " onPress={ () => navigation.navigate('Signin')} />
-         <Button title="go to Main flow " onPress={ () => navigation.navigate('mainFlow')} />
-      </>
+      <View style={styles.container}>
+      <Spacer>
+        <Text h3>Sign up for tracker</Text>
+      </Spacer>
+        <Input label="Email"
+        autoCapitalize="none"
+        autoCorrect={false}
+        value={email}
+        onChangeText={ text => setEmail(text) }  />
+        <Spacer />
+        <Input label="Password"
+        value={password}
+        onChangeText={setPassword}
+        autoCapitalize="none"
+        autoCorrect={false}
+        secureTextEntry
+        />
+
+        <Spacer>
+          <Button title="Sign up" />
+        </Spacer>
+      </ View>
     );
 
 }
 
-const styles = StyleSheet.create({
+SignupScreen.navigationOptions = ( ) => {
+  return {
+    hearder: null
+  }
+}
 
+const styles = StyleSheet.create({
+    container:{
+      flex: 1,
+      justifyContent: 'center',
+      marginBottom: 250
+    }
 });
 
 export default SignupScreen;
